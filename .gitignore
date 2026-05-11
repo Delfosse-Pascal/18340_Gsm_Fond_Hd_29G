@@ -63,8 +63,9 @@
 *.xz
 *.iso
 
-# --- Dossier audio dédié ---
-Musique/
+# --- Dossier audio dédié (on garde l'index.html, MP3 déjà ignorés ci-dessus) ---
+Musique/*
+!Musique/index.html
 
 # --- Système / OS ---
 Thumbs.db

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>18 340 Fonds GSM — Accueil</title>
+
+  <!-- Bloc fourni : ressources externes (chargement non bloquant si offline) -->
+  <link rel="canonical" href="https://filedn.eu/llN3kr5vmyEBPIWCwFj3O6h/">
+
+  <link rel="icon" href="https://filedn.eu/llN3kr5vmyEBPIWCwFj3O6h/Site_Web/favicondepascal.png" type="image/png">
+  <link rel="icon" href="https://filedn.eu/llN3kr5vmyEBPIWCwFj3O6h/Site_Web/favicondepascal.ico" type="image/x-icon">
+
+  <!-- Lier le menu social -->
+  <link rel="stylesheet" type="text/css" href="https://filedn.eu/llN3kr5vmyEBPIWCwFj3O6h/Site_Web/style.css">
+  <script src="https://filedn.eu/llN3kr5vmyEBPIWCwFj3O6h/Site_Web/script.js"></script>
+
+  <!-- Lier le fichier JavaScript du menu -->
+  <script src="https://filedn.eu/llN3kr5vmyEBPIWCwFj3O6h/Site_Web/menu.js" defer></script>
+  <link rel="stylesheet" href="https://filedn.eu/llN3kr5vmyEBPIWCwFj3O6h/Site_Web/basedusite.css">
+
+  <!-- Ressources locales (chargées après pour avoir priorité) -->
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body class="layout-fan">
+
+  <!-- Contrôles flottants -->
+  <div class="controls">
+    <button class="btn" data-theme-toggle>☾ sombre</button>
+  </div>
+
+  <!-- En-tête centré -->
+  <div class="page-top">
+    <!-- menu social -->
+    <nav class="social-menu">
+      <ul>
+        <li><a href="https://fr.pinterest.com/pascal509/mes-tableaux-tous-genre/" target="_blank" rel="noopener">Pinterest</a></li>
+        <li><a href="https://www.flickr.com/photos/delfossepascal" target="_blank" rel="noopener">Flickr</a></li>
+        <li><a href="https://www.tumblr.com/lestoilesdepascal" target="_blank" rel="noopener">Tumblr</a></li>
+        <li><a href="https://x.com/PascalDelfossee" target="_blank" rel="noopener">X</a></li>
+        <li><a href="https://www.youtube.com/c/DelfossePascal" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </nav>
+
+    <!-- Le menu sera injecté ici -->
+    <header></header>
+  </div>
+
+  <main class="wrap fade-up">
+    <section class="context">
+      <p>Bienvenue dans la collection des <strong>18 340 fonds d'écran GSM HD</strong>,
+      classés en <strong>37 tiroirs</strong> de 500 images. Cliquez sur un tiroir pour ouvrir
+      sa galerie, ou lancez la musique d'ambiance via le bouton rouge en bas à gauche.
+      Les images, audios et vidéos restent en local — la touche <kbd>Échap</kbd> ferme
+      les affichages agrandis.</p>
+    </section>
+
+    <h2 class="calli" style="text-align:center;">Les tiroirs</h2>
+    <div class="gilded-line"></div>
+
+    <div class="tiles" id="tilesGrid"></div>
+
+    <h2 class="calli" style="text-align:center; margin-top:2.4rem;">Ambiance sonore</h2>
+    <div class="gilded-line"></div>
+    <div class="tiles">
+      <a class="tile shape-round" data-frame-src="Musique/index.html" href="Musique/index.html">
+        <span>
+          <span class="tile-num">♪</span>
+          <span class="tile-name">Musique</span>
+          <span class="tile-range">7 pistes</span>
+        </span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <span class="calli">✦ ✦ ✦</span>
+    18 340 Fonds GSM HD — site local, navigation hors-ligne · &copy; Pascal Delfosse
+  </footer>
+
+  <!-- Bouton musique persistant -->
+  <button id="musicBtn" class="music-btn" aria-label="Lecteur musique" title="Lecteur musique">♪</button>
+  <div id="musicPanel" class="music-panel" role="dialog" aria-label="Lecteur audio">
+    <h4>Ambiance</h4>
+    <select id="musicSelect" aria-label="Sélection piste">
+      <option value="Musique/00.mp3">Piste 00</option>
+      <option value="Musique/01.mp3">Piste 01</option>
+      <option value="Musique/02.mp3">Piste 02</option>
+      <option value="Musique/03.mp3">Piste 03</option>
+      <option value="Musique/04.mp3">Piste 04</option>
+      <option value="Musique/05.mp3">Piste 05</option>
+      <option value="Musique/06.mp3">Piste 06</option>
+    </select>
+    <audio id="hubAudio" src="Musique/00.mp3" preload="none" controls></audio>
+    <p style="font-size:.75rem; margin:.6rem 0 0; color:var(--fg-doux);">
+      Astuce : pour garder la musique active en parcourant les tiroirs, gardez cette page
+      ouverte — les galeries s'ouvrent dans une couche par-dessus l'accueil.
+    </p>
+  </div>
+
+  <!-- Overlay iframe pour navigation persistante -->
+  <div id="frameOverlay" class="frame-overlay" aria-hidden="true">
+    <button class="fo-close" type="button" title="Fermer (Échap)">✕ Fermer</button>
+    <iframe src="about:blank" title="Contenu" loading="lazy"></iframe>
+  </div>
+
+  <script>
+    // Génération des 37 tuiles tiroirs avec formes variées
+    (function () {
+      const shapes = ['shape-rect','shape-square','shape-round','shape-pill','shape-leaf','shape-diamond'];
+      const grid = document.getElementById('tilesGrid');
+      if (!grid) return;
+      for (let i = 0; i <= 36; i++) {
+        const n = String(i).padStart(4, '0');
+        const start = i * 500 + 1;
+        const end   = i === 36 ? 18340 : (i + 1) * 500;
+        const shape = shapes[i % shapes.length];
+        const a = document.createElement('a');
+        a.className = 'tile ' + shape;
+        a.href = 'Gsm_Fond_' + n + '/index.html';
+        a.setAttribute('data-frame-src', 'Gsm_Fond_' + n + '/index.html');
+        a.innerHTML = `
+          <span>
+            <span class="tile-num">${i}</span>
+            <span class="tile-name">Tiroir ${n}</span>
+            <span class="tile-range">${String(start).padStart(5,'0')} → ${String(end).padStart(5,'0')}</span>
+          </span>`;
+        grid.appendChild(a);
+      }
+      // tiles créées avant le defer d'app.js → initOverlay les capturera
+    })();
+  </script>
+</body>
+</html>
