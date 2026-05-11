@@ -62,6 +62,27 @@
 *.bz2
 *.xz
 *.iso
+*.cab
+*.arj
+*.lzh
+
+# --- Livres numériques (ebooks) ---
+*.epub
+*.mobi
+*.azw
+*.azw3
+*.azw4
+*.kfx
+*.fb2
+*.lit
+*.lrf
+*.pdb
+*.prc
+*.djvu
+*.djv
+*.cbz
+*.cbr
+*.ibooks
 
 # --- Dossier audio dédié (on garde l'index.html, MP3 déjà ignorés ci-dessus) ---
 Musique/*
