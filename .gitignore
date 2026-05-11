@@ -1,0 +1,81 @@
+# ============================================================
+# .gitignore — 18340_Gsm_Fond_Hd_29G
+# Exclut tous les médias volumineux (images, PDF, vidéos,
+# archives, audio). Seuls la structure des tiroirs et les
+# scripts utilitaires sont versionnés.
+# ============================================================
+
+# --- Images ---
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tif
+*.tiff
+*.webp
+*.svg
+*.ico
+*.heic
+*.heif
+*.raw
+*.cr2
+*.nef
+*.arw
+*.psd
+
+# --- PDF / Documents lourds ---
+*.pdf
+
+# --- Vidéos ---
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+*.m4v
+*.mpg
+*.mpeg
+*.3gp
+*.ts
+
+# --- Audio ---
+*.mp3
+*.wav
+*.flac
+*.ogg
+*.aac
+*.m4a
+*.wma
+*.opus
+*.aiff
+
+# --- Archives ---
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.tgz
+*.bz2
+*.xz
+*.iso
+
+# --- Dossier audio dédié ---
+Musique/
+
+# --- Système / OS ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+*.lnk
+
+# --- Éditeurs ---
+.vscode/
+.idea/
+*.swp
+*~
