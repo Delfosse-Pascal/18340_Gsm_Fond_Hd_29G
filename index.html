@@ -64,8 +64,8 @@
     <h2 class="calli" style="text-align:center; margin-top:2.4rem;">Ambiance sonore</h2>
     <div class="gilded-line"></div>
     <div class="tiles">
-      <a class="tile shape-round" data-frame-src="Musique/index.html" href="Musique/index.html">
-        <span>
+      <a class="tile shape-round no-thumb" data-frame-src="Musique/index.html" href="Musique/index.html">
+        <span class="tile-content">
           <span class="tile-num">♪</span>
           <span class="tile-name">Musique</span>
           <span class="tile-range">7 pistes</span>
@@ -106,7 +106,7 @@
   </div>
 
   <script>
-    // Génération des 37 tuiles tiroirs avec formes variées
+    // Génération des 37 tuiles tiroirs avec formes variées + miniatures
     (function () {
       const shapes = ['shape-rect','shape-square','shape-round','shape-pill','shape-leaf','shape-diamond'];
       const grid = document.getElementById('tilesGrid');
@@ -116,12 +116,17 @@
         const start = i * 500 + 1;
         const end   = i === 36 ? 18340 : (i + 1) * 500;
         const shape = shapes[i % shapes.length];
+        // miniature = première image du tiroir
+        const thumbName = String(start).padStart(5, '0') + '_Gsm_Fond_Hd.jpg';
+        const thumbSrc  = 'Gsm_Fond_' + n + '/' + thumbName;
         const a = document.createElement('a');
         a.className = 'tile ' + shape;
         a.href = 'Gsm_Fond_' + n + '/index.html';
         a.setAttribute('data-frame-src', 'Gsm_Fond_' + n + '/index.html');
         a.innerHTML = `
-          <span>
+          <img class="tile-thumb" src="${thumbSrc}" alt="miniature ${n}" loading="lazy"
+               onerror="this.classList.add('broken'); this.parentElement.classList.add('no-thumb');">
+          <span class="tile-content">
             <span class="tile-num">${i}</span>
             <span class="tile-name">Tiroir ${n}</span>
             <span class="tile-range">${String(start).padStart(5,'0')} → ${String(end).padStart(5,'0')}</span>
